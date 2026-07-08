@@ -1,7 +1,7 @@
             /* Configuração geral do fundo da página */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: aliceblue;
+    background-color: rgb(201, 249, 250);
     margin: 0;
     padding: 20px;
 }
@@ -59,4 +59,14 @@ button {
 #botão-enviar {
     background-color: #2ecc71;
     color:white
+}
+            /*Quadrado que fica ao redor da caixa de assinatura*/
+#quadrado-assinatura {
+    border: 2px solid #666666;
+    background-color: #ffffff;
+    margin-top: 6px;
+    display: block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
 }
