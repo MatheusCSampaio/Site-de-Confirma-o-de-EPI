@@ -2,9 +2,10 @@
 <html lang="PT_BR">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, inital scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Retirada de EPI - Almoxerifado</title>
         <link rel="stylesheet" href="estilo.css">
+        <link rel="manifest" href="manifest.json">
     </head>
     <body>
 
@@ -15,22 +16,32 @@
                 <label for="nome-funcionario">Nome completo do Funcionário:</label>
                 <input type="text" id="nome-funcionario" required placeholder="Ex: Matheus Cavalcante Sampaio">
 
-                <label for="Lista-epis">Equipamento Retirado (EPI):</label>
-                <select id="Lista-epis" required>
-                    <option value="">-- Escolha o EPI --</option>
+                <label for="Lista-epis">Equipamento Retirado (Segure Ctrl para selecionar mais de um):</label>
+                <select id="Lista-epis" required multiple size="4">
                     <option value="óculos">Óculos de Proteção</option>
                     <option value="Camiseta">CamisetaFR</option>
                     <option value="Abafador">Protetor Auricular (Abafador)</option>
                     <option value="Bota">Botina de Segurança</option>
                     <option value="Calça">CalçaFR</option>
                 </select>
+
+                <label for ="quantidade-epi">Quantidade Retirada:</label>
+                <input type="number" id="quantidade-epi" min="1" max="100" value="1" required>
+
                 <label>assine na área abaixo:</label>
                 <canvas id="quadrado-assinatura" width="400" height="150"></canvas>
 
                 <button type="button" id="botão-limpar">Limpar Assinatura</button>
-                <button type="button" id="botão-enviar" onclick="enviarFormulario()">Confirmar Retirada</button>
+                <button type="submit" id="botão-enviar">Confirmar Retirada</button>
                 </form>
             </div>
-        <script src="logica.js"></script>    
+        <script src="logica.js"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(() => console.log('PWA registrado com sucesso'))
+                    .catch(erro => console.log('Erro ao registrar PWA:', erro));
+            }
+        </script>   
     </body>
 </html>
