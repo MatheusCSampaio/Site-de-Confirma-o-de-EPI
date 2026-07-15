@@ -1,4 +1,4 @@
-const CACHE_NAME = "epi-cache-v1";
+const CACHE_NAME = "epi-cache-v2";
 const assests = [
     "./",
     "./index.html",
