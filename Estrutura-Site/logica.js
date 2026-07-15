@@ -82,3 +82,25 @@ function enviarFormulario(evento) {
 }
             //Agora aqui é para o formulario ouvir o envio e chamar a função acima
 formulario.addEventListener("submit", enviarFormulario);
+
+const campoBusca = document.getElementById("busca-epi");
+const selectEpi = document.getElementById("Lista-epis");
+
+if (campoBusca && selectEpi) {
+        campoBusca.addEventListener("input", function() {
+            const textoDigitado = campoBusca.value.toLowerCase();
+            const opcoes = selectEpi.options;
+            
+            for(let i = 0; i < opcoes.length; i++) {
+                const textoOpcao = opcoes[i].text.toLowerCase();
+
+                if(textoOpcao.includes(textoDigitado)) {
+                        opcoes[i].hidden = false;
+                        opcoes[i].style.display = "";
+                } else {
+                        opcoes[i].hidden = true;
+                        opcoes[i].style.display = "nome";
+                }
+            }
+        });
+}
