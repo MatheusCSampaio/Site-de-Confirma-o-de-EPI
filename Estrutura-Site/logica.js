@@ -83,6 +83,7 @@ function enviarFormulario(evento) {
             //Agora aqui é para o formulario ouvir o envio e chamar a função acima
 formulario.addEventListener("submit", enviarFormulario);
 
+            //Toda essa parte do código, serve para adiocionar uma caixa de pesquisa, pois possui muitos EPIs, e pesquisando fica mais facil de encontrar.
 const campoBusca = document.getElementById("busca-epi");
 const selectEpi = document.getElementById("Lista-epis");
 

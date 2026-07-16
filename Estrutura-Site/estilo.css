@@ -1,7 +1,7 @@
             /* Configuração geral do fundo da página */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #c9f9fa;
+    background-color: #6363f4;
     margin: 0;
     padding: 20px;
 }
@@ -13,6 +13,7 @@ body {
     padding: 25px;
     border-radius: 8px;
     border: 1px solid #dcdcdc;
+    overflow: hidden;
 }
             /* Estilo dos textos de orientação (labels) */
 label {
@@ -31,6 +32,16 @@ input[type="text"], select {
     box-sizing: border-box;
     font-size: 16px;
 }
+            /* Linha completa para adicionar a barra de rolagem horizontal*/
+#Lista-epis {
+    overflow-x:auto;
+    white-space: nowrap;
+}
+
+#Lista-epis option {
+    white-space: nowrap;
+}
+
             /* Estilo do quadrado de assinatura */
 button {
     width: 100%;
@@ -57,7 +68,7 @@ button {
 }
             /* Cor específica do botão de enviar */
 #botão-enviar {
-    background-color: #2ecc71;
+    background-color: #47d52b;
     color:white
 }
             /*Quadrado que fica ao redor da caixa de assinatura*/
@@ -69,4 +80,26 @@ button {
     border-radius: 4px;
     box-sizing: border-box;
     width: 100%;
+}
+
+.faixa-topo-azul {
+    background-color: #0056a4;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.faixa-topo-azul h2 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.logo-topo {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
 }
