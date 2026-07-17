@@ -1,0 +1,17 @@
+{
+    "name": "Retirada de EPI - Almoxerifado",
+    "short_name": "Retirada de EPI",
+    "description": "Controle de Retirada de EPI com assinatura digital",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#c9f9fa",
+    "theme_color": "#00a859",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "https://cdn-icons-png.flaticon.com/512/1085/1085731.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
