@@ -78,7 +78,7 @@ function enviarFormulario(evento) {
     const imagemAssinatura = canvas.toDataURL();
 
             //4- Alerta para confirmar o envio para o email.
-    alert("Dados enviados com sucesso!:\nNome: " + nome + " \nData: " + dataretirada + " \nBase: " + baseoperacional + " \nEPIs: " + episSelecionados.join(", ") + " \nQuantidade: " + quantidade);
+    alert("Dados enviados com sucesso!\nNome: " + nome + " \nData: " + dataretirada + " \nBase: " + baseoperacional + " \nEPIs: " + episSelecionados.join(", ") + " \nQuantidade: " + quantidade);
 
             //5- Resetar o formulário após o envio.
     formulario.reset();
