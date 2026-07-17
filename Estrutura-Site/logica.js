@@ -63,21 +63,27 @@ function enviarFormulario(evento) {
             //1- Vou pegar os valores do usuário
     const nome = document.getElementById("nome-funcionario").value;
 
+
+    const baseoperacional = document.getElementById("base-operacional").value;
+
+            //2- Essa linha captura a data em que foi feita a retirada
+    const dataretirada = document.getElementById("data-retirada").value;
+
     const selectEpi = document.getElementById("Lista-epis");
     const episSelecionados = Array.from(selectEpi.selectedOptions).map(opcao => opcao.text); //"selectEpi.selectedOptions" O JavaScript olha para a lista e cria uma coleção apenas com os itens que o usuário deixou azulzinho (selecionados).
             //Pega a nova quantidade que um funcionário digitou
     const quantidade = document.getElementById("quantidade-epi").value;
 
-            //2- Transformar o desenho do canvas em um texto.
+            //3- Transformar o desenho do canvas em um texto.
     const imagemAssinatura = canvas.toDataURL();
 
-            //3- Alerta para confirmar o envio para o email.
-    alert("Dados enviados com sucesso!:\nNome: " + nome + " \nEPIs: " + episSelecionados.join(", ") + " \nQuantidade: " + quantidade);
+            //4- Alerta para confirmar o envio para o email.
+    alert("Dados enviados com sucesso!:\nNome: " + nome + " \nData: " + dataretirada + " \nBase: " + baseoperacional + " \nEPIs: " + episSelecionados.join(", ") + " \nQuantidade: " + quantidade);
 
-            //4- Resetar o formulário após o envio.
+            //5- Resetar o formulário após o envio.
     formulario.reset();
 
-            //5- Limpar a tela após a conclusão.
+            //6- Limpar a tela após a conclusão.
     limparTela();
 }
             //Agora aqui é para o formulario ouvir o envio e chamar a função acima

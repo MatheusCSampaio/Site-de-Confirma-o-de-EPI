@@ -1,7 +1,7 @@
             /* Configuração geral do fundo da página */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #3e3ee9;
+    background-color: #0056a4;
     margin: 0;
     padding: 20px;
 }
@@ -23,7 +23,7 @@ label {
     color: #333333
 }
             /* Estilo dos campos de digitação e seleção */
-input[type="text"], select {
+input[type="text"], input[type="date"], select {
     width: 100%;
     padding: 12px;
     margin-top: 6px;
