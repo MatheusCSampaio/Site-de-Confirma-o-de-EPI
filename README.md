@@ -104,6 +104,8 @@ No MacOS:
 
 Depois clique sobre cada equipamento desejado.
 
+Caso não encontre o EPI desejado, pode pesquisar na caixa de "Pesquise o EPI" para encontra-lo mais facilmente.
+
 ---
 
 ## 3. Informar a quantidade
