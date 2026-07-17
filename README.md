@@ -274,42 +274,6 @@ Toda a lógica continuará funcionando normalmente.
 
 ---
 
-# Limitações Atuais
-
-Esta versão possui finalidade demonstrativa.
-
-Atualmente ela:
-
-- Não utiliza banco de dados;
-- Não salva os registros;
-- Não envia informações para um servidor;
-- Não gera relatórios;
-- Não possui autenticação de usuários.
-
-Após a confirmação da retirada, os dados são apenas exibidos em uma mensagem e o formulário é reiniciado.
-
----
-
-# Melhorias Futuras
-
-Algumas melhorias que podem ser implementadas futuramente:
-
-- Cadastro de funcionários;
-- Login de usuários;
-- Controle de estoque;
-- Histórico de retiradas;
-- Registro de data e hora;
-- Integração com banco de dados MySQL;
-- Integração com PHP;
-- Integração com Node.js;
-- Exportação em PDF;
-- Exportação para Excel;
-- Dashboard administrativo;
-- Geração automática de relatórios;
-- Assinatura obrigatória antes da confirmação.
-
----
-
 # Licença
 
 Este projeto foi desenvolvido exclusivamente para fins de estudo e aprendizado.
