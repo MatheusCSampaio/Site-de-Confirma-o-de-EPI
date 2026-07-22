@@ -57,7 +57,7 @@ function limparTela() {
 botãoLimpar.addEventListener("click", limparTela);
 
             //Função que vai rodar quando o funcionario confirmar a retirada.
-function enviarFormulario(evento) {
+async function enviarFormulario(evento) {
     evento.preventDefault(); //Essa função impede a página de recarregar e sumir com os dados.
 
             //1- Vou pegar os valores do usuário
@@ -76,6 +76,37 @@ function enviarFormulario(evento) {
 
             //3- Transformar o desenho do canvas em um texto.
     const imagemAssinatura = canvas.toDataURL();
+
+try {
+    const resposta = await fetch(
+        "http://localhost:3000/entrega",
+        {
+                method: "post",
+                headers: {
+                     "Content-Type":"application/json"
+                },
+                body: JSON.stringify({
+                     nome,
+                     baseoperacional,
+                     dataretirada,
+                     episSelecionados,
+                     quantidade,
+                     imagemAssinatura
+                })
+        }
+    );
+
+    if (!resposta.ok) {
+        throw new Error("Error ao enviar dados");
+    }
+
+} catch (erro) {
+        console.error(erro);
+
+        alert("Erro ao enviar a retirada.");
+
+        return;
+}
 
             //4- Alerta para confirmar o envio para o email.
     alert("Dados enviados com sucesso!\nNome: " + nome + " \nData: " + dataretirada + " \nBase: " + baseoperacional + " \nEPIs: " + episSelecionados.join(", ") + " \nQuantidade: " + quantidade);
@@ -106,7 +137,7 @@ if (campoBusca && selectEpi) {
                         opcoes[i].style.display = "";
                 } else {
                         opcoes[i].hidden = true;
-                        opcoes[i].style.display = "nome";
+                        opcoes[i].style.display = "none";
                 }
             }
         });
