@@ -79,7 +79,7 @@ async function enviarFormulario(evento) {
 
 try {
     const resposta = await fetch(
-        "https://api-site-de-confirma-o-de-epi.onrender.com",
+        "https://api-site-de-confirma-o-de-epi.onrender.com/entrega",
         {
                 method: "post",
                 headers: {
