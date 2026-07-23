@@ -79,7 +79,7 @@ async function enviarFormulario(evento) {
 
 try {
     const resposta = await fetch(
-        "http://localhost:3000/entrega",
+        "https://api-site-de-confirma-o-de-epi.onrender.com",
         {
                 method: "post",
                 headers: {
