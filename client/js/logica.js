@@ -23,6 +23,9 @@ const btnCancelarReserva =
 const btnMinimizarReserva =
     document.getElementById("minimizar-reserva");
 
+const selectBase =
+    document.getElementById("base-operacional");
+
 // URL da API Node.js no Render
 const API_URL = "https://api-site-de-confirma-o-de-epi.onrender.com";
 
@@ -127,6 +130,30 @@ function preencherSelect(inventario) {
     });
 }
 
+function obterBaseEstoque(baseOperacional) {
+
+    if (
+        baseOperacional === "Base Piracicaba" ||
+        baseOperacional === "Base Sumaré" ||
+        baseOperacional === "Base Americana" ||
+        baseOperacional === "LT Piracicaba"
+    ) {
+        return "Piracicaba";
+    }
+
+    if (
+        baseOperacional === "Base Campinas Centro" ||
+        baseOperacional === "Base Viracopos" ||
+        baseOperacional === "Base Itapira" ||
+        baseOperacional === "Base Itatiba" ||
+        baseOperacional === "LT Sumaré"
+    ) {
+        return "Campinas";
+    }
+
+    return "";
+}
+
 async function carregarEstoque() {
     try {
 
@@ -148,6 +175,7 @@ async function carregarEstoque() {
         if (!resposta.ok) throw new Error("Erro ao carregar estoque.");
 
         const inventario = await resposta.json();
+        
         localStorage.setItem(
             "estoque",
             JSON.stringify(inventario)
@@ -369,6 +397,38 @@ formulario.addEventListener("submit", enviarFormulario);
 
 // Carrega o estoque do backend quando o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", carregarEstoque);
+
+selectBase.addEventListener(
+    "change",
+    function() {
+
+        const baseEstoque =
+            obterBaseEstoque(this.value);
+
+        console.log(
+            "Base estoque:",
+            baseEstoque
+        );
+
+        const estoqueCache =
+            localStorage.getItem("estoque");
+
+        if (!estoqueCache) return;
+
+        const inventario =
+            JSON.parse(estoqueCache);
+
+        const inventarioFiltrado =
+            inventario.filter(
+                item => item.base === baseEstoque
+            );
+
+        preencherSelect(
+            inventarioFiltrado
+        );
+
+    }
+);
 
 btnConfirmarReserva.addEventListener(
     "click",
