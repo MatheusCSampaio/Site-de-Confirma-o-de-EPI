@@ -4,6 +4,7 @@ const botãoLimpar = document.getElementById("botão-limpar");
 const formulario = document.getElementById("formulario-epi");
 const selectEpi = document.getElementById("Lista-epis");
 const campoBusca = document.getElementById("busca-epi");
+const mensagemBase = document.getElementById("mensagem-base");
 const containerCarrinho = document.getElementById("carrinho-epis");
 const modalReserva =
     document.getElementById("modal-reserva");
@@ -25,6 +26,8 @@ const btnMinimizarReserva =
 
 const selectBase =
     document.getElementById("base-operacional");
+    selectEpi.disabled = true;
+    campoBusca.disabled = true;
 
 // URL da API Node.js no Render
 const API_URL = "https://api-site-de-confirma-o-de-epi.onrender.com";
@@ -401,6 +404,9 @@ document.addEventListener("DOMContentLoaded", carregarEstoque);
 selectBase.addEventListener(
     "change",
     function() {
+        selectEpi.disabled = !this.value;
+        campoBusca.disabled = !this.value;
+        mensagemBase.style.display = this.value ? "none" : "block";
 
         const baseEstoque =
             obterBaseEstoque(this.value);
@@ -426,6 +432,24 @@ selectBase.addEventListener(
         preencherSelect(
             inventarioFiltrado
         );
+
+    }
+);
+
+campoBusca.addEventListener(
+    "focus",
+    function() {
+
+        if (!selectBase.value) {
+
+            alert(
+                "Selecione sua Base Operacional antes de pesquisar um EPI."
+            );
+
+            selectBase.focus();
+            this.blur();
+
+        }
 
     }
 );

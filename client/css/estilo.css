@@ -466,3 +466,24 @@ label[for="email-reserva"] {
 
     line-height: 1.4;
 }
+
+.mensagem-base {
+
+    color: #000000;
+
+    background-color: #fff3cd;
+
+    border: 1px solid #ffeeba;
+
+    border-radius: 5px;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}

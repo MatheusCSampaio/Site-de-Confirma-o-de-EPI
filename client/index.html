@@ -37,9 +37,18 @@
 
 
                 <label for="busca-epi">Adicionar Equipamento ao Carrinho:</label>
-                <input type="text" id="busca-epi" placeholder="Pesquisar EPI..." style="width: 100%; padding: 10px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
 
-                
+                <input
+                    type="text"
+                    id="busca-epi"
+                    placeholder="Pesquisar EPI..."
+                    style="width: 100%; padding: 10px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"
+                >
+
+                <p id="mensagem-base" class="mensagem-base">
+                    ⚠️ Selecione sua Base Operacional para habilitar a pesquisa e os EPIs.
+                </p>
+
                 <select id="Lista-epis">
                     <option value="">Carregando equipamentos...</option>
                 </select>
